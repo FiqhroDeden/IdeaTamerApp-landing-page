@@ -27,6 +27,9 @@ export function Footer() {
             <Link href="/support" className="hover:text-white transition-colors">
               Support
             </Link>
+            <Link href="/accessibility" className="hover:text-white transition-colors">
+              Accessibility
+            </Link>
             <a
               href={APP_STORE_URL}
               target="_blank"
