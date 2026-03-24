@@ -101,10 +101,10 @@ export default function PrivacyPage() {
             <p className="text-text-mid leading-relaxed">
               If you have any questions about this privacy policy, contact us at{" "}
               <a
-                href="mailto:support@ideatamer.app"
+                href="mailto:ideatamerapp@gmail.com"
                 className="text-hero-blue hover:underline"
               >
-                support@ideatamer.app
+                ideatamerapp@gmail.com
               </a>
               .
             </p>
