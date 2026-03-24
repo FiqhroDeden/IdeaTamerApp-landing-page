@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+
+  --color-hero-blue: #1B6EF2;
+  --color-hero-blue-light: #4D8FFF;
+  --color-hero-blue-lighter: #A8C8FF;
+  --color-hero-blue-bg: #EBF2FF;
+  --color-hero-blue-dim: #0A4FBD;
+  --color-hero-blue-deep: #0A3578;
+
+  --color-rival-red: #E5432A;
+  --color-rival-red-light: #FF6B52;
+  --color-rival-red-lighter: #FFB8AA;
+  --color-rival-red-bg: #FFF0ED;
+
+  --color-victory-emerald: #12B76A;
+  --color-victory-emerald-light: #5CE0A0;
+  --color-victory-emerald-bg: #E6F7EF;
+
+  --color-streak-amber: #F5A623;
+  --color-streak-amber-light: #FFCB57;
+  --color-streak-amber-bg: #FFF6E5;
+
+  --color-surface: #F8F7F6;
+  --color-text-primary: #2E2F2F;
+  --color-text-mid: #5B5C5B;
+  --color-text-light: #8A8B8A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-text-primary);
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
