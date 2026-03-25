@@ -2,6 +2,12 @@ export const APP_STORE_URL = "https://apps.apple.com/app/ideatamer/id0000000000"
 
 export const SITE_URL = "https://ideatamer.app";
 
+// Formspree endpoint — replace with your actual form ID from https://formspree.io
+export const FORMSPREE_URL = "https://formspree.io/f/maqlwkgz";
+
+// Product Hunt Coming Soon page — replace with your actual URL
+export const PRODUCTHUNT_URL = "https://www.producthunt.com/products/ideatamer";
+
 export const NAV_LINKS = [
   { label: "Features", href: "/#features" },
   { label: "Privacy", href: "/privacy" },

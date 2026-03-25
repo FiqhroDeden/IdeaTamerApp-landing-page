@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { AppStoreButton } from "@/components/ui/AppStoreButton";
+import { EmailSignupForm } from "@/components/ui/EmailSignupForm";
 import { springUp, staggerContainer } from "@/lib/animations";
 
 export function HeroSection() {
@@ -24,6 +24,17 @@ export function HeroSection() {
             initial="hidden"
             animate="visible"
           >
+            {/* Coming Soon badge */}
+            <motion.div variants={springUp} className="mb-5">
+              <span className="inline-flex items-center gap-2 bg-streak-amber/90 text-white text-xs font-bold tracking-wide uppercase px-4 py-1.5 rounded-full shadow-lg shadow-streak-amber/20">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+                </span>
+                Coming Soon
+              </span>
+            </motion.div>
+
             <motion.div variants={springUp} className="mb-6">
               <Image
                 src="/images/logo-bg.png"
@@ -63,12 +74,19 @@ export function HeroSection() {
               className="mt-6 text-lg sm:text-xl text-white/80 max-w-lg mx-auto lg:mx-0 leading-relaxed"
             >
               The gamified focus app that turns your best idea into a quest.
-              Score it. Ship it. Beat your past self.
+              Be the first to know when it launches.
             </motion.p>
 
             <motion.div variants={springUp} className="mt-8">
-              <AppStoreButton />
+              <EmailSignupForm variant="hero" />
             </motion.div>
+
+            <motion.p
+              variants={springUp}
+              className="mt-3 text-white/50 text-sm"
+            >
+              Free on the App Store. No spam, just launch updates.
+            </motion.p>
           </motion.div>
 
           {/* Phone mockup */}

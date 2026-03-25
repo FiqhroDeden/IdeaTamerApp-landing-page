@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { APP_STORE_URL } from "@/lib/constants";
+import { APP_STORE_URL, PRODUCTHUNT_URL } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -30,6 +30,14 @@ export function Footer() {
             <Link href="/accessibility" className="hover:text-white transition-colors">
               Accessibility
             </Link>
+            <a
+              href={PRODUCTHUNT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Product Hunt
+            </a>
             <a
               href={APP_STORE_URL}
               target="_blank"

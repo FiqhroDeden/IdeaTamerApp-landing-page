@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { AppStoreButton } from "@/components/ui/AppStoreButton";
+import { EmailSignupForm } from "@/components/ui/EmailSignupForm";
 import { fadeUp, staggerContainer, floatAnimation } from "@/lib/animations";
 
 export function FinalCTA() {
@@ -31,25 +31,25 @@ export function FinalCTA() {
           variants={fadeUp}
           className="mt-8 text-3xl sm:text-4xl md:text-5xl font-extrabold text-text-primary leading-tight"
         >
-          Your ideas deserve to ship.
+          Be the first to tame your ideas.
         </motion.h2>
 
         <motion.p
           variants={fadeUp}
           className="mt-4 text-text-mid text-lg"
         >
-          Start turning your best idea into reality — one quest at a time.
+          Get notified when IdeaTamer launches — and start shipping what matters.
         </motion.p>
 
-        <motion.div variants={fadeUp} className="mt-8">
-          <AppStoreButton size="large" />
+        <motion.div variants={fadeUp} className="mt-8 w-full flex justify-center">
+          <EmailSignupForm size="large" />
         </motion.div>
 
         <motion.p
           variants={fadeUp}
           className="mt-6 text-text-light text-sm"
         >
-          Free on the App Store. iOS 26+. No account required.
+          Launching soon on the App Store. iOS 26+. Free. No account required.
         </motion.p>
       </motion.div>
     </section>
