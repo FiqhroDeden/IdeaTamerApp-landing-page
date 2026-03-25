@@ -28,9 +28,9 @@ const FAQ = [
       "Every Monday, IdeaTamer compares your performance this week against last week across four rounds: XP earned, milestones completed, quests shipped, and streak days. Win more rounds than your past self to claim victory.",
   },
   {
-    question: "Is it really free?",
+    question: "Is it free?",
     answer:
-      "Yes. No ads, no in-app purchases, no subscriptions. IdeaTamer is completely free and always will be.",
+      "IdeaTamer is free to download with no ads. Core features are included at no cost. Premium features may be offered in future updates.",
   },
   {
     question: "Does IdeaTamer work offline?",

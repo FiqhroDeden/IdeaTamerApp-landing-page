@@ -66,7 +66,7 @@ export const FEATURES = [
     badge: "PRIVACY",
     badgeColor: "bg-text-mid",
     description:
-      "No accounts. No cloud. No tracking. Your ideas live on your device and nowhere else. Free forever on the App Store.",
+      "No accounts. No cloud. No tracking. Your ideas live on your device and nowhere else. Free to download on the App Store.",
     screenshot: "/screenshots/features/free-private.webp",
   },
 ] as const;

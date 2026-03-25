@@ -35,7 +35,7 @@
 | **iOS Requirement** | iOS 26+ (public release expected ~September 2026 with iPhone 17) |
 | **Website** | [https://ideatamer.app](https://ideatamer.app) — live with email collection via Formspree |
 | **Support** | ideatamerapp@gmail.com |
-| **Pricing** | Free forever. No IAP, no subscriptions, no ads. |
+| **Pricing** | Free to download. No ads. Freemium model planned for future updates. |
 | **Privacy** | Zero data collection, no accounts, fully offline |
 
 ### The Strategic Window
@@ -166,7 +166,7 @@ feel like winning, not just checking a box.
 
 ## What Makes IdeaTamer Different
 
-- **100% Free** — No subscriptions, no IAP, no ads. Ever.
+- **Free to Download** — No ads. Core features included. Premium features coming in future updates.
 - **Fully Offline** — Works without internet. Your ideas stay on your device.
 - **No Account Required** — Open the app and start. Zero friction.
 - **Zero Data Collection** — We don't collect, store, or transmit any data.
@@ -232,7 +232,7 @@ The ideas you actually finish go into your **Hall of Fame** — a trophy room of
 shipped work.
 
 **A few things I'm proud of:**
-- It's **completely free**. No subscriptions, no IAP, no ads.
+- It's **free to download** with no ads.
 - It works **fully offline**. No server, no cloud, no sync headaches.
 - **Zero data collection**. I literally don't know who uses this app, and that's
   by design.
@@ -446,7 +446,7 @@ app that helps you stop collecting ideas and start finishing them. You score
 ideas on Impact/Effort/Alignment, activate ONE as a quest, and compete against
 yourself weekly.
 
-It's completely free, offline, and collects zero data.
+It's free to download, works offline, and collects zero data.
 
 Would you be interested in hunting it? Happy to share a demo or TestFlight.
 
@@ -538,7 +538,7 @@ IdeaTamer is live on Product Hunt! 🚀
 You have too many ideas and finish none of them. I built an app to fix that.
 
 Score your ideas. Pick ONE quest. Compete against yourself weekly.
-Free, offline, no accounts, zero data collection.
+Free to download, offline, no accounts, zero data collection.
 
 Would love your support today 🧡
 [PH link]
@@ -573,7 +573,7 @@ finished ones.
 IdeaTamer turns idea execution into a game. You score every idea, activate
 ONE as a quest, and compete against yourself weekly.
 
-It's completely free, works offline, requires no account, and collects zero
+It's free to download, works offline, requires no account, and collects zero
 data.
 
 If this sounds useful, I'd appreciate your support on Product Hunt today:
@@ -696,13 +696,13 @@ Product Hunt audiences see hundreds of productivity apps. Here is why IdeaTamer 
 - The Weekly Duel feature should be explained clearly with visuals
 - This angle resonates strongly with solo founders and indie makers (PH's core audience)
 
-### 3. Free Forever, No Account, Offline
+### 3. Free to Download, No Account, Offline
 
-**Why it matters:** PH users are deeply skeptical of "free" products because they expect hidden monetization. IdeaTamer genuinely has none. This is remarkable and worth emphasizing.
+**Why it matters:** PH users appreciate low-friction products. IdeaTamer is free to download with no ads, works fully offline, and requires no account. Core features are available at no cost.
 
 **How to communicate it:**
-- State it explicitly: "No subscriptions. No in-app purchases. No ads. Ever."
-- Explain *why* it's free (indie passion project, not a VC-funded growth play)
+- State it clearly: "Free to download. No ads. No account required. Works offline."
+- Mention the freemium model is planned for future premium features, but the core experience is free
 - The "no account" feature removes all friction — highlight the instant onboarding
 
 ### 4. Privacy-First (Zero Data Collection)

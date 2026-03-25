@@ -85,7 +85,7 @@ export function HeroSection() {
               variants={springUp}
               className="mt-3 text-white/50 text-sm"
             >
-              Free on the App Store. No spam, just launch updates.
+              Free to download. No spam, just launch updates.
             </motion.p>
           </motion.div>
 

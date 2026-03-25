@@ -49,7 +49,7 @@ export function FinalCTA() {
           variants={fadeUp}
           className="mt-6 text-text-light text-sm"
         >
-          Launching soon on the App Store. iOS 26+. Free. No account required.
+          Launching soon on the App Store. iOS 26+. Free to download. No account required.
         </motion.p>
       </motion.div>
     </section>

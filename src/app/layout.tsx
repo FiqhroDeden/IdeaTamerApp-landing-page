@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | IdeaTamer",
   },
   description:
-    "The gamified focus app for makers and creators. Score your ideas, activate one quest at a time, compete with your past self. Free, offline, private.",
+    "The gamified focus app for makers and creators. Score your ideas, activate one quest at a time, compete with your past self. Offline, private.",
   keywords: [
     "idea management",
     "productivity app",
