@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS } from "@/lib/constants";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,7 +44,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop links */}
+        {/* Desktop links + theme toggle */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <Link
@@ -56,14 +57,17 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle scrolled={scrolled} />
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
-        >
+        {/* Mobile: theme toggle + hamburger */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle scrolled={scrolled} />
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="flex flex-col gap-1.5 p-2"
+            aria-label="Toggle menu"
+          >
           {[0, 1, 2].map((i) => (
             <span
               key={i}
@@ -80,7 +84,8 @@ export function Navbar() {
               }`}
             />
           ))}
-        </button>
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}
