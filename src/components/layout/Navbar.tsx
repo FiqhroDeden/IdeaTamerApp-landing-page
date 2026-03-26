@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
@@ -10,6 +11,11 @@ import { ThemeToggle } from "@/components/ui/ThemeToggle";
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
+
+  // On non-home pages, always show solid navbar
+  const solid = scrolled || !isHome;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -20,7 +26,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        solid
           ? "bg-white/95 dark:bg-[#0C0C0E]/95 backdrop-blur-md shadow-sm dark:shadow-black/20"
           : "bg-transparent"
       }`}
@@ -37,7 +43,7 @@ export function Navbar() {
           />
           <span
             className={`font-bold text-lg transition-colors duration-300 ${
-              scrolled ? "text-text-primary dark:text-gray-100" : "text-white"
+              solid ? "text-text-primary" : "text-white"
             }`}
           >
             IdeaTamer
@@ -51,18 +57,18 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={`text-sm font-medium transition-colors duration-300 hover:opacity-80 ${
-                scrolled ? "text-text-mid dark:text-gray-400" : "text-white/90"
+                solid ? "text-text-mid" : "text-white/90"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <ThemeToggle scrolled={scrolled} />
+          <ThemeToggle scrolled={solid} />
         </div>
 
         {/* Mobile: theme toggle + hamburger */}
         <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle scrolled={scrolled} />
+          <ThemeToggle scrolled={solid} />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex flex-col gap-1.5 p-2"
@@ -72,7 +78,7 @@ export function Navbar() {
             <span
               key={i}
               className={`block w-5 h-0.5 rounded-full transition-all duration-300 ${
-                scrolled ? "bg-text-primary dark:bg-gray-100" : "bg-white"
+                solid ? "bg-text-primary" : "bg-white"
               } ${
                 mobileOpen && i === 0
                   ? "rotate-45 translate-y-2"
@@ -103,7 +109,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-text-mid dark:text-gray-300 font-medium py-2"
+                  className="text-text-mid font-medium py-2"
                 >
                   {link.label}
                 </Link>
