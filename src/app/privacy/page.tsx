@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -11,15 +11,7 @@ export default function PrivacyPage() {
   return (
     <div className="min-h-screen pt-24 pb-16">
       <article className="max-w-3xl mx-auto px-5 prose-custom">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1 text-hero-blue text-sm font-medium mb-8 hover:underline"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Back to Home
-        </Link>
+        <Breadcrumbs crumbs={[{ name: "Privacy Policy", href: "/privacy" }]} />
 
         <h1 className="text-3xl md:text-4xl font-extrabold text-text-primary mb-2">
           Privacy Policy

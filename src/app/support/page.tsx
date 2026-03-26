@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { generateFAQSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Support",
-  description: "Get help with IdeaTamer. Frequently asked questions and contact information.",
+  description:
+    "Get help with IdeaTamer. Frequently asked questions about idea scoring, quests, Weekly Duel, gamified productivity, and offline privacy.",
 };
 
 const FAQ = [
@@ -37,21 +39,50 @@ const FAQ = [
     answer:
       "100% offline. IdeaTamer never connects to the internet. No account needed, no data sync, no network requests. Everything runs on your device.",
   },
+  {
+    question: "How is IdeaTamer different from Notion?",
+    answer:
+      "Notion is a flexible workspace for notes, databases, and team collaboration. IdeaTamer is purpose-built for one thing: helping you finish ideas. Instead of infinite flexibility, IdeaTamer gives you a focused system — score your ideas, activate one as a quest, and ship it. It also adds gamification (XP, levels, Weekly Duels) and works 100% offline with zero data collection.",
+  },
+  {
+    question: "Is IdeaTamer good for managing side project ideas?",
+    answer:
+      "Yes — it was built specifically for this. If you have too many side project ideas and struggle to finish any of them, IdeaTamer helps you score each idea objectively, pick the best one, and focus on it as a quest with milestones until you ship it. The gamification keeps you motivated and the single-quest limit prevents you from context-switching.",
+  },
+  {
+    question: "Can designers and creators use IdeaTamer?",
+    answer:
+      "Absolutely. IdeaTamer works for anyone with too many creative ideas — designers, writers, musicians, content creators, indie developers. The scoring system helps you prioritize objectively, and the quest system keeps you focused on shipping one project at a time instead of jumping between ideas.",
+  },
+  {
+    question: "How does IdeaTamer gamify productivity?",
+    answer:
+      "Every action in IdeaTamer earns XP — scoring an idea, completing a milestone, shipping a quest. You level up from Spark to Legend, collect badges, maintain streaks, and compete against yourself in Weekly Duels. It turns the process of finishing ideas into a game where you're always trying to beat your past self.",
+  },
+  {
+    question: "Is IdeaTamer really private?",
+    answer:
+      "Yes. IdeaTamer collects zero data. There are no accounts, no analytics, no tracking SDKs, no ads, no network requests, and no access to your contacts, location, or camera. All data is stored exclusively on your device using Apple SwiftData. Your ideas never leave your phone.",
+  },
+  {
+    question: "Does IdeaTamer require an internet connection?",
+    answer:
+      "No. IdeaTamer is 100% offline and never makes any network requests. You can use it on a plane, in the wilderness, or anywhere without internet. This also means your data stays completely private — nothing is ever sent to a server.",
+  },
 ];
 
 export default function SupportPage() {
   return (
     <div className="min-h-screen pt-24 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateFAQSchema(FAQ)),
+        }}
+      />
+
       <div className="max-w-3xl mx-auto px-5">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-1 text-hero-blue text-sm font-medium mb-8 hover:underline"
-        >
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 12L6 8l4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-          Back to Home
-        </Link>
+        <Breadcrumbs crumbs={[{ name: "Support", href: "/support" }]} />
 
         <h1 className="text-3xl md:text-4xl font-extrabold text-text-primary mb-2">
           Support

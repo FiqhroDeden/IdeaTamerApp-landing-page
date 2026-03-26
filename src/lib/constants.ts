@@ -10,7 +10,8 @@ export const PRODUCTHUNT_URL = "https://www.producthunt.com/products/ideatamer";
 
 export const NAV_LINKS = [
   { label: "Features", href: "/#features" },
-  { label: "Privacy", href: "/privacy" },
+  { label: "Use Cases", href: "/use-cases/indie-developers" },
+  { label: "Compare", href: "/compare" },
   { label: "Support", href: "/support" },
 ] as const;
 

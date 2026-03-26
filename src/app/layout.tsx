@@ -6,6 +6,11 @@ import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/lib/constants";
+import {
+  generateSoftwareAppSchema,
+  generateOrganizationSchema,
+  generateWebSiteSchema,
+} from "@/lib/structured-data";
 
 const plusJakarta = localFont({
   src: [
@@ -85,22 +90,15 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              name: "IdeaTamer",
-              operatingSystem: "iOS 26+",
-              applicationCategory: "ProductivityApplication",
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-              },
-              description:
-                "Gamified idea focus app. Score, focus, and ship your best ideas. One quest at a time.",
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSoftwareAppSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateOrganizationSchema()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }}
         />
       </head>
       <body className="font-sans antialiased">
