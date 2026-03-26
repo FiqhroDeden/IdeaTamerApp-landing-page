@@ -34,7 +34,7 @@ export function HowItWorks() {
   return (
     <section className="py-20 md:py-28 relative overflow-hidden">
       {/* Subtle gradient bg */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-hero-blue-bg/30 to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-hero-blue-bg/30 to-white dark:from-[#0C0C0E] dark:via-hero-blue/5 dark:to-[#0C0C0E]" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-5">
         <motion.div
@@ -44,10 +44,10 @@ export function HowItWorks() {
           variants={fadeUp}
           className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-gray-100">
             How it works
           </h2>
-          <p className="mt-3 text-text-mid text-lg">
+          <p className="mt-3 text-text-mid dark:text-gray-400 text-lg">
             Four steps to ship your best ideas
           </p>
         </motion.div>
@@ -67,10 +67,10 @@ export function HowItWorks() {
                   {ICONS[i]}
                 </div>
 
-                <h3 className="text-xl font-bold text-text-primary mb-2">
+                <h3 className="text-xl font-bold text-text-primary dark:text-gray-100 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-text-mid text-sm leading-relaxed">
+                <p className="text-text-mid dark:text-gray-400 text-sm leading-relaxed">
                   {step.description}
                 </p>
 

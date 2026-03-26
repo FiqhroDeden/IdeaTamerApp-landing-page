@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
 
@@ -27,6 +29,12 @@
   --color-text-primary: #2E2F2F;
   --color-text-mid: #5B5C5B;
   --color-text-light: #8A8B8A;
+
+  /* Dark mode semantic tokens */
+  --color-dark-bg: #0C0C0E;
+  --color-dark-surface: #18181B;
+  --color-dark-card: #1E1E22;
+  --color-dark-border: #2E2E33;
 }
 
 html {
@@ -38,6 +46,23 @@ body {
   background: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark body {
+  color: #F0F0F0;
+  background: var(--color-dark-bg);
+}
+
+/* Override semantic tokens in dark mode */
+.dark {
+  --color-surface: #18181B;
+  --color-text-primary: #F0F0F0;
+  --color-text-mid: #A0A0A3;
+  --color-text-light: #6B6B6F;
+  --color-hero-blue-bg: #0A1A30;
+  --color-victory-emerald-bg: #0A2A1A;
+  --color-rival-red-bg: #2A0F0A;
+  --color-streak-amber-bg: #2A1A05;
 }
 
 /* Hide scrollbar for carousel */

@@ -81,7 +81,7 @@ export function EmailSignupForm({ size = "default", variant = "section" }: Email
               } ${
                 isHero
                   ? "bg-white/95 border-white/30 text-text-primary"
-                  : "bg-white border-gray-200 text-text-primary"
+                  : "bg-white dark:bg-[#1E1E22] border-gray-200 dark:border-[#2E2E33] text-text-primary dark:text-gray-100"
               } ${status === "error" ? "ring-2 ring-rival-red/50 border-rival-red" : ""}`}
             />
             <button

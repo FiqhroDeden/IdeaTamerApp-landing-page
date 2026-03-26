@@ -84,25 +84,25 @@ export default function SupportPage() {
       <div className="max-w-3xl mx-auto px-5">
         <Breadcrumbs crumbs={[{ name: "Support", href: "/support" }]} />
 
-        <h1 className="text-3xl md:text-4xl font-extrabold text-text-primary mb-2">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-gray-100 mb-2">
           Support
         </h1>
-        <p className="text-text-mid mb-12">
+        <p className="text-text-mid dark:text-gray-400 mb-12">
           Answers to common questions about IdeaTamer.
         </p>
 
         {/* FAQ */}
         <section className="space-y-4 mb-16">
-          <h2 className="text-xl font-bold text-text-primary mb-6">
+          <h2 className="text-xl font-bold text-text-primary dark:text-gray-100 mb-6">
             Frequently Asked Questions
           </h2>
 
           {FAQ.map((item, i) => (
             <details
               key={i}
-              className="group bg-surface rounded-xl border border-gray-100"
+              className="group bg-surface dark:bg-[#18181B] rounded-xl border border-gray-100 dark:border-[#2E2E33]"
             >
-              <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-text-primary font-semibold select-none">
+              <summary className="flex items-center justify-between cursor-pointer px-6 py-4 text-text-primary dark:text-gray-100 font-semibold select-none">
                 {item.question}
                 <svg
                   className="w-5 h-5 text-text-light transition-transform group-open:rotate-180 flex-shrink-0 ml-4"
@@ -116,7 +116,7 @@ export default function SupportPage() {
                   />
                 </svg>
               </summary>
-              <div className="px-6 pb-4 text-text-mid leading-relaxed">
+              <div className="px-6 pb-4 text-text-mid dark:text-gray-400 leading-relaxed">
                 {item.answer}
               </div>
             </details>
@@ -124,7 +124,7 @@ export default function SupportPage() {
         </section>
 
         {/* Contact */}
-        <section className="bg-hero-blue-bg rounded-2xl p-8 text-center">
+        <section className="bg-hero-blue-bg dark:bg-hero-blue/10 rounded-2xl p-8 text-center">
           <h2 className="text-xl font-bold text-text-primary mb-3">
             Still have questions?
           </h2>

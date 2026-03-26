@@ -7,7 +7,7 @@ import { fadeUp, staggerContainer, floatAnimation } from "@/lib/animations";
 
 export function FinalCTA() {
   return (
-    <section className="py-24 md:py-32 bg-gradient-to-b from-white to-hero-blue-bg/30">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-white to-hero-blue-bg/30 dark:from-[#0C0C0E] dark:to-hero-blue/5">
       <motion.div
         className="max-w-2xl mx-auto px-5 text-center flex flex-col items-center"
         initial="hidden"
@@ -29,14 +29,14 @@ export function FinalCTA() {
 
         <motion.h2
           variants={fadeUp}
-          className="mt-8 text-3xl sm:text-4xl md:text-5xl font-extrabold text-text-primary leading-tight"
+          className="mt-8 text-3xl sm:text-4xl md:text-5xl font-extrabold text-text-primary dark:text-gray-100 leading-tight"
         >
           Be the first to tame your ideas.
         </motion.h2>
 
         <motion.p
           variants={fadeUp}
-          className="mt-4 text-text-mid text-lg"
+          className="mt-4 text-text-mid dark:text-gray-400 text-lg"
         >
           Get notified when IdeaTamer launches — and start shipping what matters.
         </motion.p>
@@ -47,7 +47,7 @@ export function FinalCTA() {
 
         <motion.p
           variants={fadeUp}
-          className="mt-6 text-text-light text-sm"
+          className="mt-6 text-text-light dark:text-gray-500 text-sm"
         >
           Launching soon on the App Store. iOS 26+. Free to download. No account required.
         </motion.p>

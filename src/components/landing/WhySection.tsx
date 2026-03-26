@@ -61,13 +61,13 @@ const REASONS = [
 
 export function WhySection() {
   return (
-    <section className="py-20 md:py-28 bg-surface">
+    <section className="py-20 md:py-28 bg-surface dark:bg-[#18181B]">
       <div className="max-w-6xl mx-auto px-5">
         <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-gray-100">
             Why IdeaTamer?
           </h2>
-          <p className="mt-3 text-text-mid text-lg max-w-2xl mx-auto">
+          <p className="mt-3 text-text-mid dark:text-gray-400 text-lg max-w-2xl mx-auto">
             Most productivity apps help you collect ideas. IdeaTamer helps you
             finish them. Here&apos;s what makes it different.
           </p>
@@ -78,15 +78,15 @@ export function WhySection() {
             <Link
               key={reason.title}
               href={reason.href}
-              className="group bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg hover:border-hero-blue-lighter transition-all"
+              className="group bg-white dark:bg-[#1E1E22] rounded-2xl border border-gray-100 dark:border-[#2E2E33] p-6 hover:shadow-lg hover:border-hero-blue-lighter dark:hover:border-hero-blue/50 transition-all"
             >
-              <div className="w-10 h-10 rounded-xl bg-hero-blue-bg text-hero-blue flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-xl bg-hero-blue-bg dark:bg-hero-blue/10 text-hero-blue flex items-center justify-center mb-4">
                 {reason.icon}
               </div>
-              <h3 className="text-lg font-bold text-text-primary mb-2 group-hover:text-hero-blue transition-colors">
+              <h3 className="text-lg font-bold text-text-primary dark:text-gray-100 mb-2 group-hover:text-hero-blue transition-colors">
                 {reason.title}
               </h3>
-              <p className="text-text-mid text-sm leading-relaxed">
+              <p className="text-text-mid dark:text-gray-400 text-sm leading-relaxed">
                 {reason.description}
               </p>
             </Link>

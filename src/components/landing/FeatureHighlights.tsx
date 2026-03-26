@@ -16,10 +16,10 @@ export function FeatureHighlights() {
           variants={fadeUp}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-gray-100">
             Everything you need to ship
           </h2>
-          <p className="mt-3 text-text-mid text-lg">
+          <p className="mt-3 text-text-mid dark:text-gray-400 text-lg">
             Built for makers who have too many ideas and not enough shipped projects
           </p>
         </motion.div>
@@ -47,10 +47,10 @@ export function FeatureHighlights() {
                   >
                     {feature.badge}
                   </span>
-                  <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-4">
+                  <h3 className="text-2xl md:text-3xl font-bold text-text-primary dark:text-gray-100 mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-text-mid text-lg leading-relaxed">
+                  <p className="text-text-mid dark:text-gray-400 text-lg leading-relaxed">
                     {feature.description}
                   </p>
                 </motion.div>

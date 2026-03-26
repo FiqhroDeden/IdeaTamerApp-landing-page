@@ -35,10 +35,10 @@ export function ScreenshotCarousel() {
   }, [isPaused]);
 
   return (
-    <section className="py-16 md:py-24 bg-surface overflow-hidden">
+    <section className="py-16 md:py-24 bg-surface dark:bg-[#18181B] overflow-hidden">
       <AnimatedOnScroll>
         <div className="max-w-6xl mx-auto px-5 mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary text-center">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-gray-100 text-center">
             See it in action
           </h2>
         </div>

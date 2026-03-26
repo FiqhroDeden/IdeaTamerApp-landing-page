@@ -9,11 +9,11 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-hero-blue via-hero-blue-light/80 to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-hero-blue via-hero-blue-light/80 to-white dark:to-[#0C0C0E]" />
 
       {/* Decorative circles */}
       <div className="absolute top-20 left-10 w-72 h-72 rounded-full bg-white/5 blur-3xl" />
-      <div className="absolute bottom-40 right-10 w-96 h-96 rounded-full bg-hero-blue-lighter/20 blur-3xl" />
+      <div className="absolute bottom-40 right-10 w-96 h-96 rounded-full bg-hero-blue-lighter/20 dark:bg-hero-blue/20 blur-3xl" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-5 pt-24 pb-16 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -83,7 +83,7 @@ export function HeroSection() {
 
             <motion.p
               variants={springUp}
-              className="mt-3 text-white/50 text-sm"
+              className="mt-3 text-white/70 text-sm"
             >
               Free to download. No spam, just launch updates.
             </motion.p>
@@ -98,7 +98,7 @@ export function HeroSection() {
           >
             <div className="relative">
               {/* Glow behind phone */}
-              <div className="absolute inset-0 bg-white/20 rounded-[3rem] blur-2xl scale-105" />
+              <div className="absolute inset-0 bg-white/20 dark:bg-hero-blue/30 rounded-[3rem] blur-2xl scale-105" />
               <Image
                 src="/screenshots/appstore/slide-6.webp"
                 alt="IdeaTamer app — Capture, Score, Focus, Ship"
