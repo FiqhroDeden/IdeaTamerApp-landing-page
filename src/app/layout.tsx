@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { GrainOverlay } from "@/components/marks/GrainOverlay";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { SITE_URL } from "@/lib/constants";
@@ -24,9 +26,24 @@ const plusJakarta = localFont({
   variable: "--font-plus-jakarta",
 });
 
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-instrument-serif",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  variable: "--font-jetbrains-mono",
+});
+
 export const metadata: Metadata = {
   title: {
-    default: "IdeaTamer — Stop collecting ideas. Start finishing them.",
+    default: "IdeaTamer: Stop collecting ideas. Start finishing them.",
     template: "%s | IdeaTamer",
   },
   description:
@@ -48,7 +65,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: SITE_URL,
     siteName: "IdeaTamer",
-    title: "IdeaTamer — Stop collecting ideas. Start finishing them.",
+    title: "IdeaTamer: Stop collecting ideas. Start finishing them.",
     description:
       "Score your ideas, focus on one quest, compete with yourself. Free for iOS.",
     images: [
@@ -56,13 +73,13 @@ export const metadata: Metadata = {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "IdeaTamer — Gamified Idea Focus App",
+        alt: "IdeaTamer, a gamified idea focus app",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "IdeaTamer — Stop collecting ideas. Start finishing them.",
+    title: "IdeaTamer: Stop collecting ideas. Start finishing them.",
     description:
       "Score your ideas, focus on one quest, compete with yourself. Free for iOS.",
     images: ["/images/og-image.png"],
@@ -86,7 +103,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={plusJakarta.variable} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${plusJakarta.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -106,7 +127,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }}
         />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-paper text-ink dark:bg-ink dark:text-chalk">
+        <GrainOverlay />
         <Navbar />
         <main>{children}</main>
         <Footer />

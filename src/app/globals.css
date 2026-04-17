@@ -4,7 +4,21 @@
 
 @theme {
   --font-sans: var(--font-plus-jakarta), system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), "Times New Roman", Times, serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
+  /* Paper / Ink tokens — the new base palette */
+  --color-paper: #F4EFE6;
+  --color-paper-deep: #EAE3D5;
+  --color-paper-edge: #DCD3BE;
+  --color-ink: #1A1A1C;
+  --color-ink-mid: #55514A;
+  --color-ink-soft: #8A8378;
+  --color-chalk: #F0E9DC;
+  --color-chalk-mid: #BFB7A5;
+  --color-ink-deep: #0E0D0B;
+
+  /* Kinetic Quest palette (kept) */
   --color-hero-blue: #1B6EF2;
   --color-hero-blue-light: #4D8FFF;
   --color-hero-blue-lighter: #A8C8FF;
@@ -16,6 +30,7 @@
   --color-rival-red-light: #FF6B52;
   --color-rival-red-lighter: #FFB8AA;
   --color-rival-red-bg: #FFF0ED;
+  --color-rival-red-deep: #7A1D0E;
 
   --color-victory-emerald: #12B76A;
   --color-victory-emerald-light: #5CE0A0;
@@ -25,13 +40,14 @@
   --color-streak-amber-light: #FFCB57;
   --color-streak-amber-bg: #FFF6E5;
 
+  /* Legacy tokens kept for surfaces still using them */
   --color-surface: #F8F7F6;
   --color-text-primary: #2E2F2F;
   --color-text-mid: #5B5C5B;
   --color-text-light: #8A8B8A;
 
   /* Dark mode semantic tokens */
-  --color-dark-bg: #0C0C0E;
+  --color-dark-bg: #0E0D0B;
   --color-dark-surface: #18181B;
   --color-dark-card: #1E1E22;
   --color-dark-border: #2E2E33;
@@ -42,15 +58,15 @@ html {
 }
 
 body {
-  color: var(--color-text-primary);
-  background: white;
+  color: var(--color-ink);
+  background: var(--color-paper);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .dark body {
-  color: #F0F0F0;
-  background: var(--color-dark-bg);
+  color: var(--color-chalk);
+  background: var(--color-ink-deep);
 }
 
 /* Override semantic tokens in dark mode */
@@ -63,6 +79,13 @@ body {
   --color-victory-emerald-bg: #0A2A1A;
   --color-rival-red-bg: #2A0F0A;
   --color-streak-amber-bg: #2A1A05;
+
+  --color-paper: #0E0D0B;
+  --color-paper-deep: #15130F;
+  --color-paper-edge: #1F1C16;
+  --color-ink: #F0E9DC;
+  --color-ink-mid: #BFB7A5;
+  --color-ink-soft: #857E70;
 }
 
 /* Hide scrollbar for carousel */
@@ -72,4 +95,42 @@ body {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Editorial helpers */
+.font-serif-display {
+  font-family: var(--font-serif);
+  font-feature-settings: "liga", "dlig", "kern";
+  letter-spacing: -0.02em;
+}
+
+.font-mono-micro {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Paper grain — very subtle, applied globally by <GrainOverlay /> */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.42 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 220px 220px;
+}
+
+.dark .grain-overlay {
+  opacity: 0.12;
+  mix-blend-mode: screen;
+}
+
+/* Editorial rule lines */
+.ink-rule {
+  height: 1px;
+  background: currentColor;
+  opacity: 0.22;
 }

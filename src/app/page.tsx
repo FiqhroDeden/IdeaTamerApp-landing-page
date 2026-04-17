@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/landing/HeroSection";
 import { ScreenshotCarousel } from "@/components/landing/ScreenshotCarousel";
+import { ManifestoNumbers } from "@/components/landing/ManifestoNumbers";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { FeatureHighlights } from "@/components/landing/FeatureHighlights";
 import { CompeteSection } from "@/components/landing/CompeteSection";
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <HeroSection />
       <ScreenshotCarousel />
+      <ManifestoNumbers />
       <HowItWorks />
       <FeatureHighlights />
       <WhySection />

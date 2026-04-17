@@ -1,106 +1,125 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { Scribble } from "@/components/marks/Scribble";
 
 const REASONS = [
   {
-    title: "Privacy-first",
-    description:
-      "Zero data collection. No accounts, no cloud, no tracking. Your ideas stay on your device and nowhere else.",
+    label: "privacy.",
     href: "/blog/privacy-first-productivity",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    ),
+    evidence: ["0 network requests", "0 accounts", "0 cloud", "0 tracking"],
+    aside: "the app itself doesn't know the internet exists.",
   },
   {
-    title: "Offline by design",
-    description:
-      "IdeaTamer never connects to the internet. Works everywhere — on a plane, in a cafe, or off the grid.",
+    label: "offline.",
     href: "/blog/privacy-first-productivity",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <line x1="1" y1="1" x2="23" y2="23" />
-        <path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55" />
-        <path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39" />
-        <path d="M10.71 5.05A16 16 0 0 1 22.56 9" />
-        <path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88" />
-        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
-        <line x1="12" y1="20" x2="12.01" y2="20" />
-      </svg>
-    ),
+    evidence: ["works on a plane", "works in a cafe", "works off-grid", "works at 35,000 ft"],
+    aside: "built to survive your worst connection.",
   },
   {
-    title: "One quest focus",
-    description:
-      "Only one active idea at a time. This deliberate constraint is what makes IdeaTamer different from every other productivity tool.",
+    label: "one quest.",
     href: "/use-cases/indie-developers",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <circle cx="12" cy="12" r="10" />
-        <circle cx="12" cy="12" r="4" />
-        <line x1="12" y1="2" x2="12" y2="6" />
-        <line x1="12" y1="18" x2="12" y2="22" />
-        <line x1="2" y1="12" x2="6" y2="12" />
-        <line x1="18" y1="12" x2="22" y2="12" />
-      </svg>
-    ),
+    evidence: ["1 active at a time", "ship it", "or shelve it", "no other option"],
+    aside: "the constraint is the feature.",
   },
   {
-    title: "Gamified accountability",
-    description:
-      "XP, levels, streaks, badges, and Weekly Duels against your past self. Productivity that feels like a game.",
+    label: "gamified.",
     href: "/blog/why-ideatamer",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
-        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-      </svg>
-    ),
+    evidence: ["XP", "levels", "streaks", "weekly duels"],
+    aside: "productivity that feels like a game. because it is one.",
   },
 ];
 
 export function WhySection() {
   return (
-    <section className="py-20 md:py-28 bg-surface dark:bg-[#18181B]">
-      <div className="max-w-6xl mx-auto px-5">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-gray-100">
-            Why IdeaTamer?
-          </h2>
-          <p className="mt-3 text-text-mid dark:text-gray-400 text-lg max-w-2xl mx-auto">
-            Most productivity apps help you collect ideas. IdeaTamer helps you
-            finish them. Here&apos;s what makes it different.
+    <section className="py-24 md:py-32 bg-paper-deep dark:bg-paper-deep border-y border-ink/15 dark:border-chalk/15">
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
+          className="mb-14 md:mb-20"
+        >
+          <p className="font-mono text-[11px] tracking-[0.28em] uppercase text-ink-mid dark:text-chalk-mid">
+            Section 03 / deliberate choices
           </p>
-        </div>
+          <h2 className="mt-3 font-serif-display text-5xl md:text-7xl leading-[0.95] text-ink dark:text-chalk tracking-tight max-w-[18ch]">
+            four things most <span className="italic">productivity</span>{" "}
+            <span className="relative inline-block">
+              apps won&apos;t do.
+              <Scribble
+                variant="underline"
+                color="var(--color-rival-red)"
+                className="absolute -bottom-2 left-0 w-full h-4"
+                strokeWidth={3.6}
+                delay={0.4}
+              />
+            </span>
+          </h2>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {REASONS.map((reason) => (
-            <Link
-              key={reason.title}
-              href={reason.href}
-              className="group bg-white dark:bg-[#1E1E22] rounded-2xl border border-gray-100 dark:border-[#2E2E33] p-6 hover:shadow-lg hover:border-hero-blue-lighter dark:hover:border-hero-blue/50 transition-all"
+        {/* Typographic rows */}
+        <div>
+          {REASONS.map((reason, i) => (
+            <motion.div
+              key={reason.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.55, delay: i * 0.08 }}
+              className="group grid grid-cols-12 items-baseline gap-4 md:gap-8 py-8 md:py-12 border-b border-ink/20 dark:border-chalk/20"
             >
-              <div className="w-10 h-10 rounded-xl bg-hero-blue-bg dark:bg-hero-blue/10 text-hero-blue flex items-center justify-center mb-4">
-                {reason.icon}
+              {/* Big label */}
+              <div className="col-span-12 md:col-span-5">
+                <Link
+                  href={reason.href}
+                  className="inline-block font-serif-display text-5xl md:text-7xl leading-[0.95] text-ink dark:text-chalk hover:text-hero-blue dark:hover:text-hero-blue-light transition-colors"
+                >
+                  {reason.label}
+                </Link>
               </div>
-              <h3 className="text-lg font-bold text-text-primary dark:text-gray-100 mb-2 group-hover:text-hero-blue transition-colors">
-                {reason.title}
-              </h3>
-              <p className="text-text-mid dark:text-gray-400 text-sm leading-relaxed">
-                {reason.description}
-              </p>
-            </Link>
+
+              {/* Evidence tags */}
+              <div className="col-span-12 md:col-span-5 flex flex-wrap gap-x-4 gap-y-2">
+                {reason.evidence.map((e, j) => (
+                  <span
+                    key={j}
+                    className="font-mono text-[13px] tracking-[0.08em] text-ink-mid dark:text-chalk-mid"
+                  >
+                    [{" "}
+                    <span className="text-ink dark:text-chalk">{e}</span>{" "}
+                    ]
+                  </span>
+                ))}
+              </div>
+
+              {/* Aside */}
+              <div className="col-span-12 md:col-span-2 md:text-right">
+                <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-ink-soft dark:text-chalk-mid/70 leading-relaxed">
+                  {reason.aside}
+                </p>
+              </div>
+            </motion.div>
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-10"
+        >
           <Link
             href="/blog/why-ideatamer"
-            className="text-hero-blue font-semibold text-sm hover:underline"
+            className="font-mono text-[11px] tracking-[0.22em] uppercase text-hero-blue hover:text-hero-blue-dim"
           >
-            Read the full story &rarr;
+            read the full story →
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

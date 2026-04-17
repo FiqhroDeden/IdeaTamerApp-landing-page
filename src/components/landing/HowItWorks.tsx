@@ -1,91 +1,117 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { GlassCard } from "@/components/ui/GlassCard";
-import { HOW_IT_WORKS } from "@/lib/constants";
-import { fadeUp, staggerContainer } from "@/lib/animations";
 
-const ICONS = [
-  // Capture — lightbulb
-  <svg key="capture" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <path d="M9 21h6M12 3a6 6 0 0 0-4 10.5V17h8v-3.5A6 6 0 0 0 12 3z" />
-  </svg>,
-  // Score — sliders
-  <svg key="score" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <line x1="4" y1="21" x2="4" y2="14" /><line x1="4" y1="10" x2="4" y2="3" />
-    <line x1="12" y1="21" x2="12" y2="12" /><line x1="12" y1="8" x2="12" y2="3" />
-    <line x1="20" y1="21" x2="20" y2="16" /><line x1="20" y1="12" x2="20" y2="3" />
-    <line x1="1" y1="14" x2="7" y2="14" /><line x1="9" y1="8" x2="15" y2="8" /><line x1="17" y1="16" x2="23" y2="16" />
-  </svg>,
-  // Focus — crosshair
-  <svg key="focus" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="4" /><line x1="12" y1="2" x2="12" y2="6" /><line x1="12" y1="18" x2="12" y2="22" /><line x1="2" y1="12" x2="6" y2="12" /><line x1="18" y1="12" x2="22" y2="12" />
-  </svg>,
-  // Ship — trophy
-  <svg key="ship" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
-    <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-    <path d="M4 22h16" /><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-    <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-  </svg>,
+const STEPS = [
+  {
+    num: "01",
+    title: "capture",
+    body: "Dump every scrap into your inbox. No folders. No tags. No friction. Max 10 unscored ideas keeps you honest.",
+    mono: "inbox / 10 max",
+    thumb: "/screenshots/features/smart-scoring.webp",
+  },
+  {
+    num: "02",
+    title: "score",
+    body: "Three sliders — Impact, Effort, Alignment. Out pops a single number from 1 to 100. Your ideas finally have a pecking order.",
+    mono: "3 sliders → 1 score",
+    thumb: "/screenshots/features/smart-scoring.webp",
+  },
+  {
+    num: "03",
+    title: "focus",
+    body: "Your top-scored idea becomes your active Quest. One idea. Full attention. Milestones track the slog.",
+    mono: "one quest / full attention",
+    thumb: "/screenshots/features/one-quest.webp",
+  },
+  {
+    num: "04",
+    title: "ship",
+    body: "Finish milestones, earn XP, send the Quest to your Hall of Fame. Only then does the next one unlock.",
+    mono: "ship · or shelve · nothing else",
+    thumb: "/screenshots/features/hall-of-fame.webp",
+  },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="py-20 md:py-28 relative overflow-hidden">
-      {/* Subtle gradient bg */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-hero-blue-bg/30 to-white dark:from-[#0C0C0E] dark:via-hero-blue/5 dark:to-[#0C0C0E]" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-5">
+    <section className="py-24 md:py-32 bg-paper dark:bg-paper">
+      <div className="max-w-6xl mx-auto px-5 md:px-8">
+        {/* Editorial section header */}
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          variants={fadeUp}
-          className="text-center mb-14"
+          transition={{ duration: 0.6 }}
+          className="mb-14 md:mb-20 flex items-end justify-between gap-6 border-b border-ink/30 dark:border-chalk/30 pb-5"
         >
-          <h2 className="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-gray-100">
-            How it works
-          </h2>
-          <p className="mt-3 text-text-mid dark:text-gray-400 text-lg">
-            Four steps to ship your best ideas
+          <div>
+            <p className="font-mono text-[11px] tracking-[0.28em] uppercase text-ink-mid dark:text-chalk-mid">
+              Section 02 / The Loop
+            </p>
+            <h2 className="mt-3 font-serif-display text-5xl md:text-7xl leading-[0.95] text-ink dark:text-chalk tracking-tight">
+              four steps.
+              <br />
+              <span className="italic">that&apos;s the whole app.</span>
+            </h2>
+          </div>
+          <p className="hidden md:block font-mono text-[11px] tracking-[0.2em] uppercase text-ink-soft dark:text-chalk-mid max-w-[26ch] text-right leading-relaxed">
+            read top to bottom.
+            <br />
+            the loop repeats until you ship.
           </p>
         </motion.div>
 
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          variants={staggerContainer}
-        >
-          {HOW_IT_WORKS.map((step, i) => (
-            <motion.div key={step.step} variants={fadeUp}>
-              <GlassCard className="h-full relative">
-                {/* Step number */}
-                <div className={`w-10 h-10 rounded-full ${step.bgColor} flex items-center justify-center ${step.color} mb-4`}>
-                  {ICONS[i]}
-                </div>
+        {/* Ledger rows */}
+        <div>
+          {STEPS.map((step, i) => (
+            <motion.div
+              key={step.num}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative grid grid-cols-12 items-center gap-4 md:gap-6 py-7 md:py-10 border-b border-ink/20 dark:border-chalk/20 transition-colors hover:bg-paper-deep/50 dark:hover:bg-paper-deep/50"
+            >
+              {/* Number */}
+              <div className="col-span-3 md:col-span-2">
+                <span className="font-mono text-5xl md:text-7xl font-medium text-ink/30 dark:text-chalk/30 group-hover:text-hero-blue transition-colors duration-300">
+                  {step.num}
+                </span>
+              </div>
 
-                <h3 className="text-xl font-bold text-text-primary dark:text-gray-100 mb-2">
+              {/* Title + body */}
+              <div className="col-span-9 md:col-span-7">
+                <h3 className="font-serif-display text-3xl md:text-5xl leading-tight text-ink dark:text-chalk">
                   {step.title}
+                  <span className="inline-block ml-3 text-hero-blue opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                    →
+                  </span>
                 </h3>
-                <p className="text-text-mid dark:text-gray-400 text-sm leading-relaxed">
-                  {step.description}
+                <p className="mt-3 text-base md:text-lg text-ink-mid dark:text-chalk-mid max-w-[56ch] leading-relaxed">
+                  {step.body}
                 </p>
+                <p className="mt-3 font-mono text-[11px] tracking-[0.2em] uppercase text-ink-soft dark:text-chalk-mid/70">
+                  {step.mono}
+                </p>
+              </div>
 
-                {/* Connecting arrow for desktop */}
-                {i < 3 && (
-                  <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-hero-blue-lighter">
-                      <path d="M5 12h14m0 0l-4-4m4 4l-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                )}
-              </GlassCard>
+              {/* Screenshot chip */}
+              <div className="hidden md:flex col-span-3 justify-end">
+                <div className="relative overflow-hidden rounded-xl w-[90px] h-[190px] shadow-md border border-ink/10 dark:border-chalk/10 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-2">
+                  <Image
+                    src={step.thumb}
+                    alt={`${step.title} preview`}
+                    width={90}
+                    height={190}
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

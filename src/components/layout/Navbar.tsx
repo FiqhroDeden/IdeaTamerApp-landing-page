@@ -14,11 +14,10 @@ export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
-  // On non-home pages, always show solid navbar
   const solid = scrolled || !isHome;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -27,26 +26,25 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         solid
-          ? "bg-white/95 dark:bg-[#0C0C0E]/95 backdrop-blur-md shadow-sm dark:shadow-black/20"
+          ? "bg-paper/85 dark:bg-paper/85 backdrop-blur-md border-b border-ink/10 dark:border-chalk/10"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <Image
             src="/images/logo-bg.png"
             alt="IdeaTamer"
-            width={36}
-            height={36}
-            className="rounded-lg"
+            width={32}
+            height={32}
+            className="rounded-md"
           />
-          <span
-            className={`font-bold text-lg transition-colors duration-300 ${
-              solid ? "text-text-primary" : "text-white"
-            }`}
-          >
+          <span className="font-serif-display italic text-xl text-ink dark:text-chalk">
             IdeaTamer
+          </span>
+          <span className="hidden sm:inline font-mono text-[10px] tracking-[0.2em] uppercase text-ink-soft dark:text-chalk-mid ml-1 pl-3 border-l border-ink/15 dark:border-chalk/15">
+            Est. Ambon ’26
           </span>
         </Link>
 
@@ -56,40 +54,36 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors duration-300 hover:opacity-80 ${
-                solid ? "text-text-mid" : "text-white/90"
-              }`}
+              className="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-mid dark:text-chalk-mid hover:text-ink dark:hover:text-chalk transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <ThemeToggle scrolled={solid} />
+          <ThemeToggle scrolled={true} />
         </div>
 
         {/* Mobile: theme toggle + hamburger */}
         <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle scrolled={solid} />
+          <ThemeToggle scrolled={true} />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex flex-col gap-1.5 p-2"
             aria-label="Toggle menu"
           >
-          {[0, 1, 2].map((i) => (
-            <span
-              key={i}
-              className={`block w-5 h-0.5 rounded-full transition-all duration-300 ${
-                solid ? "bg-text-primary" : "bg-white"
-              } ${
-                mobileOpen && i === 0
-                  ? "rotate-45 translate-y-2"
-                  : mobileOpen && i === 1
-                  ? "opacity-0"
-                  : mobileOpen && i === 2
-                  ? "-rotate-45 -translate-y-2"
-                  : ""
-              }`}
-            />
-          ))}
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className={`block w-5 h-0.5 rounded-full transition-all duration-300 bg-ink dark:bg-chalk ${
+                  mobileOpen && i === 0
+                    ? "rotate-45 translate-y-2"
+                    : mobileOpen && i === 1
+                    ? "opacity-0"
+                    : mobileOpen && i === 2
+                    ? "-rotate-45 -translate-y-2"
+                    : ""
+                }`}
+              />
+            ))}
           </button>
         </div>
       </div>
@@ -101,7 +95,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white/95 dark:bg-[#18181B]/95 backdrop-blur-md border-t border-gray-100 dark:border-[#2E2E33] overflow-hidden"
+            className="md:hidden bg-paper/95 dark:bg-paper/95 backdrop-blur-md border-t border-ink/15 dark:border-chalk/15 overflow-hidden"
           >
             <div className="px-5 py-4 flex flex-col gap-3">
               {NAV_LINKS.map((link) => (
@@ -109,7 +103,7 @@ export function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-text-mid font-medium py-2"
+                  className="font-mono text-[11px] tracking-[0.22em] uppercase text-ink-mid dark:text-chalk-mid py-2"
                 >
                   {link.label}
                 </Link>
