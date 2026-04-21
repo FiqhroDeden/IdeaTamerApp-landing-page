@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { EmailSignupForm } from "@/components/ui/EmailSignupForm";
+import { AppStoreButton } from "@/components/ui/AppStoreButton";
 import { ProductHuntBadge } from "@/components/ui/ProductHuntBadge";
 import { Scribble } from "@/components/marks/Scribble";
 
@@ -77,14 +77,14 @@ export function HeroSection() {
               another until you ship it, or shelve it.
             </motion.p>
 
-            {/* Form */}
+            {/* Primary CTA */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.55 }}
               className="mt-8"
             >
-              <EmailSignupForm variant="section" size="large" />
+              <AppStoreButton size="large" />
               <p className="mt-3 font-mono text-[11px] tracking-[0.18em] uppercase text-ink-soft dark:text-chalk-mid/70">
                 free · iOS 26+ · no account · no cloud
               </p>
