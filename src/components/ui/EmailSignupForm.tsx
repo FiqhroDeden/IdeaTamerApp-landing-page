@@ -59,7 +59,7 @@ export function EmailSignupForm({ size = "default", variant = "section" }: Email
                 clipRule="evenodd"
               />
             </svg>
-            You&apos;re in! We&apos;ll notify you on launch day.
+            You&apos;re in. I&apos;ll only write when there&apos;s something worth saying.
           </motion.div>
         ) : (
           <motion.form
@@ -104,7 +104,7 @@ export function EmailSignupForm({ size = "default", variant = "section" }: Email
                   Joining...
                 </span>
               ) : (
-                "Notify Me"
+                "Join List"
               )}
             </button>
           </motion.form>

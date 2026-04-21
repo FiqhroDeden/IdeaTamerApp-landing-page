@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { EmailSignupForm } from "@/components/ui/EmailSignupForm";
+import { ProductHuntBadge } from "@/components/ui/ProductHuntBadge";
 import { Scribble } from "@/components/marks/Scribble";
 
 export function HeroSection() {
@@ -29,13 +30,13 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="mb-5 flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] uppercase text-rival-red"
+              className="mb-5 flex items-center gap-3 font-mono text-[11px] tracking-[0.22em] uppercase text-victory-emerald"
             >
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-rival-red opacity-60 animate-ping" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-rival-red" />
+                <span className="absolute inline-flex h-full w-full rounded-full bg-victory-emerald opacity-60 animate-ping" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-victory-emerald" />
               </span>
-              Launching Tuesday · App Store + Product Hunt
+              Live on App Store · Featured on Product Hunt
             </motion.div>
 
             {/* Headline — off-center, serif display */}
@@ -87,6 +88,9 @@ export function HeroSection() {
               <p className="mt-3 font-mono text-[11px] tracking-[0.18em] uppercase text-ink-soft dark:text-chalk-mid/70">
                 free · iOS 26+ · no account · no cloud
               </p>
+              <div className="mt-6">
+                <ProductHuntBadge />
+              </div>
             </motion.div>
           </div>
 

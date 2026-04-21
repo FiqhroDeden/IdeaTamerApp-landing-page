@@ -1,12 +1,12 @@
-export const APP_STORE_URL = "https://apps.apple.com/app/ideatamer/id0000000000";
+export const APP_STORE_URL = "https://apps.apple.com/us/app/ideatamer/id6761060829";
 
 export const SITE_URL = "https://ideatamer.app";
 
-// Formspree endpoint — replace with your actual form ID from https://formspree.io
+// Formspree endpoint (replace with your actual form ID from https://formspree.io)
 export const FORMSPREE_URL = "https://formspree.io/f/maqlwkgz";
 
-// Product Hunt Coming Soon page — replace with your actual URL
-export const PRODUCTHUNT_URL = "https://www.producthunt.com/products/ideatamer";
+// Product Hunt Coming Soon page (replace with your actual URL)
+export const PRODUCTHUNT_URL = "https://www.producthunt.com/products/ideatamer?launch=ideatamer";
 
 export const NAV_LINKS = [
   { label: "Features", href: "/#features" },
@@ -22,7 +22,7 @@ export const FEATURES = [
     badge: "SCORING",
     badgeColor: "bg-hero-blue",
     description:
-      "Three sliders. One score. Every idea rated on Impact, Effort, and Alignment — so your best ideas always rise to the top.",
+      "Three sliders. One score. Every idea rated on Impact, Effort, and Alignment, so your best ideas rise to the top.",
     screenshot: "/screenshots/features/smart-scoring.webp",
   },
   {
@@ -40,7 +40,7 @@ export const FEATURES = [
     badge: "COMPETE",
     badgeColor: "bg-rival-red",
     description:
-      "Compete with who you were 7 days ago. Four rounds — XP earned, milestones hit, quests shipped, streak days. Beat your shadow every week.",
+      "Compete with who you were 7 days ago. Four rounds: XP earned, milestones hit, quests shipped, streak days. Beat your shadow every week.",
     screenshot: "/screenshots/features/weekly-duel.webp",
   },
   {

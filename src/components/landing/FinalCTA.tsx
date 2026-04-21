@@ -72,9 +72,10 @@ export function FinalCTA() {
           </h2>
 
           <p className="mt-6 text-base md:text-lg text-ink-mid dark:text-chalk-mid max-w-[44ch] leading-relaxed">
-            I&apos;ll send one email when IdeaTamer goes live on the App Store.
-            Tuesday, April 21. That&apos;s it. No drip campaign, no &ldquo;here&apos;s
-            what&apos;s new&rdquo; newsletter, no tracking pixel.
+            IdeaTamer is live on the App Store. If you want an email the next
+            time I ship something worth saying, leave it below. No drip
+            campaign, no &ldquo;here&apos;s what&apos;s new&rdquo; newsletter,
+            no tracking pixel.
           </p>
 
           <div className="mt-8">
