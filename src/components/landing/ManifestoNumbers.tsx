@@ -57,7 +57,7 @@ export function ManifestoNumbers() {
           </div>
 
           {/* 0 → 1 column */}
-          <div className="relative md:pt-20 md:text-right">
+          <div className="relative text-right md:pt-20">
             <div className="relative inline-block">
               <motion.span
                 initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export function ManifestoNumbers() {
                 <NumberTicker value={1} start={0} duration={2.2} delay={0.6} />
               </motion.span>
             </div>
-            <p className="mt-6 font-serif-display text-2xl md:text-3xl leading-snug text-ink dark:text-chalk max-w-[26ch] md:ml-auto">
+            <p className="mt-6 font-serif-display text-2xl md:text-3xl leading-snug text-ink dark:text-chalk max-w-[26ch] ml-auto">
               active quest at a time. one. that&apos;s the whole trick.
             </p>
             <p className="mt-4 font-mono text-[11px] tracking-[0.2em] uppercase text-ink-soft dark:text-chalk-mid">

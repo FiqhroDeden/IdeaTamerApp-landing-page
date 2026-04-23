@@ -84,7 +84,7 @@ export function CompeteSection() {
           </div>
 
           <div className="col-span-2 flex justify-center">
-            <div className="font-serif-display italic text-5xl md:text-7xl text-streak-amber leading-none">
+            <div className="font-serif-display italic text-4xl md:text-7xl text-streak-amber leading-none">
               vs
             </div>
           </div>
@@ -146,12 +146,12 @@ export function CompeteSection() {
 
                 {/* Middle label */}
                 <div className="col-span-2 text-center">
-                  <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-white/70 leading-tight">
+                  <p className="font-mono text-[9px] md:text-[10px] tracking-[0.12em] md:tracking-[0.22em] uppercase text-white/70 leading-tight">
                     {r.label.split(" / ")[0]}
                     <br />
-                    <span className="text-white/40">{r.label.split(" / ")[1]}</span>
+                    <span className="hidden md:inline text-white/40">{r.label.split(" / ")[1]}</span>
                   </p>
-                  <p className="mt-2 font-mono text-[10px] tracking-[0.2em] uppercase">
+                  <p className="mt-2 font-mono text-[9px] md:text-[10px] tracking-[0.12em] md:tracking-[0.2em] uppercase">
                     {blueWins && <span className="text-hero-blue-lighter">◀ win</span>}
                     {redWins && <span className="text-rival-red-lighter">win ▶</span>}
                     {draw && <span className="text-streak-amber">— draw —</span>}

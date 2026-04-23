@@ -200,7 +200,7 @@ export function FeatureHighlights() {
                 </div>
 
                 {/* Screenshot column */}
-                <div className={`col-span-12 md:col-span-4 flex ${isEven ? "md:order-1 md:justify-start" : "md:justify-end"}`}>
+                <div className={`col-span-12 md:col-span-4 flex justify-center ${isEven ? "md:order-1 md:justify-start" : "md:justify-end"}`}>
                   <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

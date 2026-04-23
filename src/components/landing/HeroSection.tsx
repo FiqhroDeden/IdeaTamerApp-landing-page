@@ -108,7 +108,7 @@ export function HeroSection() {
                 width={320}
                 height={693}
                 priority
-                className="rounded-[2.2rem] shadow-[0_30px_60px_-20px_rgba(26,26,28,0.35)]"
+                className="w-[280px] sm:w-[320px] h-auto rounded-[2.2rem] shadow-[0_30px_60px_-20px_rgba(26,26,28,0.35)]"
               />
 
               {/* Annotation arrow pointing to the 1–100 score */}

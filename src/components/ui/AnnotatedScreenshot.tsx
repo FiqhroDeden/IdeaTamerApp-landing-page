@@ -60,7 +60,7 @@ export function AnnotatedScreenshot({
       />
 
       {callouts.map((c, i) => (
-        <div key={i} className="pointer-events-none">
+        <div key={i} className="pointer-events-none hidden sm:block">
           <div
             className="absolute"
             style={{
